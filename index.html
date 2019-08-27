@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Desktop Timelapser</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK:300,400,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1 id="simple">simple</h1>
+    <h1>DESKTOP TIMELAPSER</h1>
+    <br />
+    <br />
+    <p class="byline">BY MIKE CARBONE @carbnology</p>
+
+    <div class="input-container">
+      <div class="input">
+        <label for="interval">Seconds in between</label>
+        <input id="interval" value="60" type="number" placeholder="0"></input>
+      </div>
+
+      <div class="input">
+        <label for="compress">Picture Quality</label>
+        <div style="position: relative;">
+          <input id="compress" value="75" type="number" placeholder="75"></input>
+          <span class="percentage">%</span>
+        </div>
+      </div>
+
+      <div class="input">
+        <label for="file-name">Filename Prefix</label>
+        <input id="file-name" value="capture" type="text" placeholder="capture"></input>
+      </div>
+    </div>
+
+    <div id="recording-light" class="recording-light"></div>
+    <button id="screenshot-start-button">Start Screenshotting</button>
+    <div class="details">
+      <p class="detail">Screenshots taken: <span id="screenshot-count">0</span></p>
+      <p class="detail">Last screenshot taken at: <span id="screenshot-time">ur mum</span></p>
+    </div>
+    <img style="width: 400px" id="my-preview" />
+
+    <script src='./index.js'></script>
+  </body>
+
+  <style>
+    * {
+      border: 0;
+      box-sizing: border-box;
+      font-family: 'Noto Sans HK', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    button {
+      background-color: #42D66A;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      display: block;
+      font-size: 14px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+
+    button:active,
+    button:focus {
+      outline: none;
+    }
+
+    a {
+      border-bottom: 1px solid #f7c500;
+      color: gainsboro;
+      cursor: pointer;
+      font-weight: lighter;
+      padding: 2px 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all .2s ease-in;
+    }
+
+    a:hover {
+      background-color: #f7c500;
+      color: black;
+      transition: all .2s ease-in;
+    }
+
+    input {
+      border-bottom: 1px solid black;
+      font-size: 14px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield; /* Firefox */
+    }
+
+    input:focus {
+      
+      border-bottom: 1px solid #42D66A;
+      outline: none;
+    }
+
+    .input {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin: 25px 0;
+    }
+
+    #simple {
+      font-size: 30px;
+      font-weight: lighter;
+    }
+
+    .input-container {
+      margin: 50px auto;
+      max-width: 525px;
+    }
+
+    .percentage {
+      font-size: 14px;
+      position: absolute;
+      right: 30%;
+      top: 30%;
+    }
+
+    .recording-light {
+      animation: glow 2s ease-in-out infinite alternate-reverse;
+      background-color: red;
+      border-radius: 50%;
+      box-shadow: 0px 0px 18px -5px red;
+      display: none;
+      height: 35px;
+      margin: 25px auto;
+      position: fixed;
+      top: -10px;
+      right: 25px;
+      width: 35px;
+    }
+
+    @keyframes glow {
+      from {
+        background-color: red;
+        box-shadow: 0px 0px 18px 1px red;
+      }
+
+      to {
+        background-color: #d80202;
+        box-shadow: 0px 0px 18px -5px red;
+      }
+    }
+
+    .detail {
+      color: #cacaca;
+      font-size: 10px;
+      margin: 5px;
+      text-align: center;
+    }
+
+    .details {
+      margin: 25px auto;
+    }
+
+    .byline {
+      color: #cacaca;
+      font-size: 12px;
+      font-weight: lighter;
+      margin-top: -35px;
+      text-align: center;
+    }
+
+  </style>
+</html>
