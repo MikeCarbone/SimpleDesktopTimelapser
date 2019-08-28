@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "desktop-screenshot": "^0.1.1",
-    "electron-screenshot-service": "^4.0.3"
+    "image-size": "^0.7.4",
+    "videoshow": "^0.1.11"
   }
 }
