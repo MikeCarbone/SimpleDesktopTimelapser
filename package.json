@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^6.0.3"
+    "electron": "^18.3.7"
   },
   "dependencies": {
     "desktop-screenshot": "^0.1.1",
